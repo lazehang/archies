@@ -1,0 +1,96 @@
+@media screen and (max-width:1024px){
+	body {
+	
+	}
+	.example3 , .example3 .navbar{
+		display: block;
+		margin-bottom:0px !important;
+	}
+	.nav-col {
+		display: none;
+	}
+	.menu {
+		display: none;
+	}
+	#navigation-menu {
+		display: none !important;
+	}
+	#bs-example-navbar-collapse-1 {
+		display: none !important;
+	}
+	/*#bs-example-navbar-collapse-1 ul > li.dropdown{
+	    position: absolute;
+    left: 80%;
+	}
+	#nav-search-bar input{
+		width:62%;
+	}
+	#nav-user-account{
+		padding:0em;
+	}*/
+
+	#page1{
+		margin-top: 7.5%;
+		padding-top: 3%;
+	}
+	img.bg-heart {
+		
+		margin-left: 60% !important;
+		
+	}
+	.responsive-slider-parallax {
+		margin-top: -1%;
+	}
+	.responsive-slider-parallax .slides-container ul li .slide-body .caption.img-toy img {
+        height: 260px;
+    
+}
+.responsive-slider-parallax .slides-container ul li .slide-body .caption.header-main {
+    
+    left: 6%;
+}
+.responsive-slider-parallax .slides-container ul li .slide-body .caption.img-toy{
+	right: 0%;
+}
+	.carousel-sm {
+		display: none;
+	}
+	.carousel-lg .hovereffect {
+
+height:150px !important;
+
+}
+.carousel-lg .see-more, .carousel-lg .add-to-cart{
+	display: none !important;
+}
+.carousel-lg .item p, .carousel .item h3 > a{
+	font-size: 16px !important;
+}
+	.testimonial-wrapper{
+		padding-left:0em !important;
+	}
+	.footer-bottom-section {
+		padding: 0em;
+	}
+	.footer-bottom-wrapper{
+		padding-left: 15%;
+	}
+		.social-button {
+ 
+  width: 35px;
+  height: 35px;
+
+}
+.social-button .fa {
+  font-size: 30px;
+  }
+
+}
+
+@media screen and (max-width:800px){
+	#page1 {
+		padding-top: 3%;
+	}
+
+
+}

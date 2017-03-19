@@ -1,0 +1,32 @@
+.addprodbtn {
+	position: fixed !important;
+	top:90%;
+	left:80%;
+	z-index: 1000;
+	opacity: 0.5;
+	border-top-left-radius: 40%;
+	border-bottom-right-radius: 40%;
+	background: #dd4b39;
+	-webkit-transition: 0.4s;
+	-o-transition: 0.4s;
+	transition: 0.4s;
+	color: #fff;
+
+}
+.addprodbtn:hover {
+	opacity: 1;
+	border-top-right-radius: 40%;
+	border-bottom-left-radius: 40%;
+	border-top-left-radius: 0%;
+	border-bottom-right-radius: 0%;
+	color: #fff;
+
+}
+
+.content h2 {
+	color: #dd4b39 ;
+}
+
+.content .btn-primary {
+	background: #dd4b39;
+}

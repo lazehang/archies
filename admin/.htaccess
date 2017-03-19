@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteRule ^dashboard?$ dashboard.php
+RewriteRule ^products?$ products.php
+RewriteRule ^ocassion?$ ocassion.php
+RewriteRule ^postOcassion?$ postOcassion.php
+RewriteRule ^logout?$ logout.php
