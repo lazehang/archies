@@ -1,13 +1,8 @@
 <?php
 require 'includes/db.php';
 
-// read items in the cart
-$cookie = isset($_COOKIE['cart_items_cookie']) ? $_COOKIE['cart_items_cookie'] : "";
-$cookie = stripslashes($cookie);
-$saved_cart_items = json_decode($cookie, true);
-
-// to prevent null value
-$saved_cart_items=$saved_cart_items==null ? array() : $saved_cart_items;
+//responsive slider
+$sliders = mysqli_query($conn, "SELECT * from responsiveslider");
 
 
 
@@ -186,23 +181,26 @@ $saved_cart_items=$saved_cart_items==null ? array() : $saved_cart_items;
         <img src="images/box.png" class="bg-heart">
       </div>
     <ul>
+      <?php 
+     while ($slider = $sliders->fetch_assoc()) { ?>
       <li>
         <div class="slide-body" data-group="slide">
           <div class="container">
             <div class="wrapper">
               <div class="caption header-main" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
-                <div class="caption sub-top" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300">&mdash; Your smile made &mdash;</div>
-                <h2>Happiness</h2>
-                <div class="caption sub-bottom" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300">&mdash; ENJOY GIFTS &mdash;</div>
+                <div class="caption sub-top" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300">&mdash; <?php echo $slider['top_caption']; ?> &mdash;</div>
+                <h2><?php echo $slider['main_caption']; ?></h2>
+                <div class="caption sub-bottom" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300">&mdash;<?php echo $slider['bootom_caption']; ?>&mdash;</div>
               </div>
               <div class="caption img-toy" data-animate="slideAppearLeftToRight" data-delay="200">
-                <img src="images/toy4.png">
+                <img src="img/slider/<?php echo $slider['src']; ?>">
               </div>
             </div>
           </div>
         </div>
       </li>
-      <li>
+      <?php } ?>
+     <!--  <li>
         <div class="slide-body" data-group="slide">
           <div class="container">
             <div class="wrapper">
@@ -233,7 +231,7 @@ $saved_cart_items=$saved_cart_items==null ? array() : $saved_cart_items;
             </div>
           </div>
         </div>
-      </li>
+      </li> -->
     </ul>
   </div>
   <a class="slider-control left" href="#" data-jump="prev"><i class="fa fa-chevron-left"></i></a>

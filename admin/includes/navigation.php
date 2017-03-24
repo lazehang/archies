@@ -93,17 +93,44 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
+
         <li class="treeview">
-          <a href="products">
-            <i class="fa fa-arrow-right"></i> <span>Products</span>
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Products</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
+          <ul class="treeview-menu" style="display: none;">
+            <li><a href="forhim.php"><i class="fa fa-circle-o"></i>For Him</a></li>
+            <li><a href="forher.php"><i class="fa fa-circle-o"></i>For Her</a></li>
+            <li><a href="forhome.php"><i class="fa fa-circle-o"></i> For Home</a></li>
+            <li><a href="forkids.php"><i class="fa fa-circle-o"></i>For Kids</a></li>
+            <li><a href="newarrival.php"><i class="fa fa-circle-o"></i>New Arrivals</a></li>
+            <li><a href="ocassionprod.php"><i class="fa fa-circle-o"></i>Ocassions</a></li>
+            <li><a href="trending.php"><i class="fa fa-circle-o"></i>Trendings</a></li>
+            <li><a href="mostviewed.php"><i class="fa fa-circle-o"></i>Most Viewed</a></li>
+            <li><a href="newcollection.php"><i class="fa fa-circle-o"></i>New Collection</a></li>
+          </ul>
         </li>
         <li class="treeview">
           <a href="ocassion">
             <i class="fa fa-arrow-right"></i> <span>Ocassions</span>
           </a>
         </li>
-       
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Home</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="display: none;">
+            <li><a href="slider.php"><i class="fa fa-circle-o"></i>Responsive Slider</a></li>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

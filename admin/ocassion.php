@@ -31,7 +31,9 @@ require '../includes/db.php';
 <section class="content" id="ocassion">
     <div class="box container"><br>
         <a href="postocassion.php" class="btn btn-primary">Add Ocassion</a><br>
-         <h2 class="well well-sm ">New Arrivals</h2>
+        <small class="text-danger">Note: Only the latest ocassion will be displayed on the site</small>
+         <h2 class="well well-sm ">Ocassion</h2>
+
               <table class="table table-striped table-responsive col-xs-12">
             <thead class="">
             <tr>

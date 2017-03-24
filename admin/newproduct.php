@@ -98,18 +98,18 @@ if(isset($_POST['submit'])){
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Clients
-        <small>Management</small>
+        Add Product
+        <small>archies</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Clients</a></li>
+        <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">add product</a></li>
       </ol>
     </section>
 <!-- Main content -->
 <section class="content">
     <div class="box container"><br>
-        <a href="products" class="btn btn-success">Back to Products</a><br><br>
+        <a href="" class="btn btn-success">Back to Products</a><br><br>
             <form method="POST" action="" accept-charset="UTF-8" enctype="multipart/form-data">
                    <input name="" type="hidden" value="">
                   <div class="form-group well">
@@ -130,6 +130,7 @@ if(isset($_POST['submit'])){
                       echo $product['stock'];
                     } ?>" placeholder="1000">
                   </div>
+
                   <div class="form-group well">
                     <label for="category" class="col-md-3">Main Category</label>
                    <?php if(!empty($Edit)){
@@ -148,6 +149,28 @@ if(isset($_POST['submit'])){
                         ?>
                     <select name="m_category">
                       <?php
+                      if(isset($_GET['cat'])){
+                        $cat = $_GET['cat'];
+
+                        $sql = mysqli_query($conn, "SELECT * FROM main_categories WHERE category = '$cat'");
+                      $count =mysqli_num_rows($sql);
+                      if($count >0){
+
+
+                      while($rows = mysqli_fetch_assoc($sql)){
+                        ?>
+                        <option value="<?php echo $rows['id'] ;?>">
+                          <?php echo $rows['category'] ;?>
+                        </option>
+                      <?php
+                        }
+                      }
+
+                      }
+                      else{
+                        ?>
+                        <option value="0">none</option>
+                        <?php
                       $sql = mysqli_query($conn, "SELECT * FROM main_categories");
                       $count =mysqli_num_rows($sql);
                       if($count >0){
@@ -161,12 +184,15 @@ if(isset($_POST['submit'])){
                       <?php
                         }
                       }
-                      ?>
+                    }
+                     ?>
                      </select>
                      <?php
-                    }
+                  }
+
                     ?>  
                   </div>
+
 
                   <div class="form-group well">
                     <label for="category" class="col-md-3">Category</label>
@@ -185,7 +211,27 @@ if(isset($_POST['submit'])){
                     else{
                         ?>
                     <select name="category">
+                         <?php
+                      if(isset($_GET['fcat'])){
+                        $fcat = $_GET['fcat'];
+
+                        $sql = mysqli_query($conn, "SELECT * FROM categories WHERE category = '$fcat'");
+                      $count =mysqli_num_rows($sql);
+                      if($count >0){
+
+
+                      while($rows = mysqli_fetch_assoc($sql)){
+                        ?>
+                        <option value="<?php echo $rows['id'] ;?>">
+                          <?php echo $rows['category'] ;?>
+                        </option>
+                      <?php
+                        }
+                      }
+
+                      } ?>
                       <option value='0'>None</option>
+
 
                       <?php
                       $sql = mysqli_query($conn, "SELECT * FROM categories");
