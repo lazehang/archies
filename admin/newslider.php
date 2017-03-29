@@ -109,18 +109,21 @@ if(isset($_POST['submit'])){
                     <input type="text" name="m_cap" id="m_cap" value="<?php if(!empty($Edit)){
                       echo $slider['main_caption'];
                     } ?>" placeholder="Main Caption">
+                    <small>This comes in center</small>
                   </div>
                   <div class="form-group well">
                     <label for="t_cap" class="col-md-3">Top Caption</label>
                     <input type="text" name="t_cap" id="t_cap" value="<?php if(!empty($Edit)){
                       echo $slider['top_caption'];
                     } ?>" placeholder="Top Small Caption">
+                     <small>This comes in top</small>
                   </div>
                   <div class="form-group well">
                     <label for="b_cap" class="col-md-3">Bottom Cation</label>
                     <input type="text" name="b_cap" id="b_cap" value="<?php if(!empty($Edit)){
-                      echo $slider['b_cap'];
+                      echo $slider['bottom_caption'];
                     } ?>" placeholder="Bottom Small Caption">
+                     <small>This comes in bottom</small>
                   </div>
 
                 <div class="form-group well">

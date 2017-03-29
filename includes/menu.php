@@ -56,7 +56,7 @@
                     </li>
 
                     <li class="menu__item ">
-                      <a href="forhome" class="menu__link">
+                      <a href="forhome.php" class="menu__link">
                         <span class="menu__title">
                           <span class="menu__first-word" data-hover="For">
                             For

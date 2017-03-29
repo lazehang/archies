@@ -74,6 +74,15 @@ $sql = mysqli_query($conn, "SELECT a.* FROM products a inner join main_categorie
         <?php
         }
         }
+        else {
+          ?>
+   
+          <div class="text-center text-danger">
+            <h1>No Results Available Now !!</h1>
+          </div>          
+
+        <?php
+        }
         ?>
         </div>
         </div>
@@ -81,15 +90,16 @@ $sql = mysqli_query($conn, "SELECT a.* FROM products a inner join main_categorie
   </div>
 </section>
   
-
+<div class="container">
+            <ul class="pagination pull-right">
 <?php
 
     if(isset($page))
   {
 
-    // $result = mysqli_query($conn,"SELECT a.* FROM products a inner join main_categories b on a.main_category_id = b.id Where b.category = 'for him'");
+    $result = mysqli_query($conn,"SELECT a.* FROM products a inner join main_categories b on a.main_category_id = b.id Where b.category = 'for her'");
 
-    // $rows = mysqli_num_rows($result);
+    $rows = mysqli_num_rows($result);
 
     if($rows)
 

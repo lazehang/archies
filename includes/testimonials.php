@@ -1,4 +1,7 @@
+<?php 
+$sql = mysqli_query($conn, "SELECT * FROM testimonial");
 
+?>
 <section id="counter-wrapper" class="front-page-section" >
 	<div class="container">
 		<div class="row">
@@ -20,17 +23,20 @@
 			 
 			 				 <!-- Wrapper for slides -->
 			  				<div class="carousel-inner" role="listbox">
-			    
-			   					<div class="item active">
+			    				<?php
+			    				while ($testi = $sql->fetch_assoc()){ 
+			    				?>
+			   					<div class="item">
 			       					<blockquote>
-			      						<p>If you do the job badly enough,
-									       sometimes you don't get asked to do it again.
+			      						<p>
+			      							<?php echo $testi['content'];?> 
 									    </p>
 			    					</blockquote>
-			    					<h3>Rojit Shah</h3>
-			    					<h4>Inbox IT.</h4>      
+			    					<h3><?php echo $testi['name'];?></h3>
+			    					<h4><?php echo $testi['designation'];?></h4>      
 			    				</div>
-
+			    				<?php } ?>
+<!-- 
 							    <div class="item">
 							        <blockquote>
 								      <p>If you do the job badly enough,
@@ -59,7 +65,7 @@
 								    </blockquote>
 								    <h3>Wisteria </h3>
 								    <h4>Google Inc.</h4>
-							    </div>
+							    </div> -->
 							</div>
 
 						  	<!-- Left and right controls -->
@@ -81,5 +87,8 @@
 		
 </div><!--/.container-->
 </section>
+<script type="text/javascript">
+$( "div#myCarousel div.carousel-inner div.item" ).first().addClass( "active" );
+</script>
 
 	

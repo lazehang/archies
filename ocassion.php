@@ -58,7 +58,7 @@ $ocassion = mysqli_query($conn, "SELECT * FROM ocassion ORDER BY id DESC LIMIT 1
         {
           $perpage= $_POST['perpage'];
         } else{
-        $perpage = 12;
+        $perpage = 1;
         }
         if(isset($_GET["page"])){
         $page = intval($_GET["page"]);
@@ -97,21 +97,31 @@ $ocassion = mysqli_query($conn, "SELECT * FROM ocassion ORDER BY id DESC LIMIT 1
         <?php
         }
         }
+        else {
+          ?>
+   
+          <div class="text-center text-danger">
+            <h1>No Results Available Now !!</h1>
+          </div>          
+
+        <?php
+        }
         ?>
         </div>
         </div>
     </div>
   </div>
 </section>
-
+<div class="container">
+            <ul class="pagination pull-right">
 <?php
 
     if(isset($page))
   {
 
-    // $result = mysqli_query($conn,"SELECT a.* FROM products a inner join main_categories b on a.main_category_id = b.id Where b.category = 'for him'");
+    $result = mysqli_query($conn,"SELECT a.* FROM products a inner join main_categories b on a.main_category_id = b.id Where b.category = 'ocassion'");
 
-    // $rows = mysqli_num_rows($result);
+    $rows = mysqli_num_rows($result);
 
     if($rows)
 

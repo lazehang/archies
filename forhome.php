@@ -1,6 +1,6 @@
 <?php
 require 'includes/db.php';
-$sql = mysqli_query($conn, "SELECT a.* FROM products a inner join main_categories b on a.main_category_id = b.id Where b.category = 'for home' ");
+// $sql = mysqli_query($conn, "SELECT a.* FROM products a inner join main_categories b on a.main_category_id = b.id Where b.category = 'for home' ");
 
 ?>
 <!DOCTYPE html>
@@ -50,7 +50,7 @@ $sql = mysqli_query($conn, "SELECT a.* FROM products a inner join main_categorie
 
         $calc = $perpage * $page;
         $start = $calc - $perpage;
-        $result = mysqli_query($conn, "SELECT a.* FROM products a inner join main_categories b on a.main_category_id = b.id Where b.category = 'for him'  Limit $start, $perpage");
+        $result = mysqli_query($conn, "SELECT a.* FROM products a inner join main_categories b on a.main_category_id = b.id Where b.category = 'for home'  Limit $start, $perpage");
 
         $rows = mysqli_num_rows($result);
 
@@ -76,6 +76,15 @@ $sql = mysqli_query($conn, "SELECT a.* FROM products a inner join main_categorie
         <?php
         }
         }
+        else {
+          ?>
+   
+          <div class="text-center text-danger">
+            <h1>No Results Available Now !!</h1>
+          </div>          
+
+        <?php
+        }
         ?>
         </div>
         </div>
@@ -90,9 +99,9 @@ $sql = mysqli_query($conn, "SELECT a.* FROM products a inner join main_categorie
     if(isset($page))
   {
 
-    // $result = mysqli_query($conn,"SELECT a.* FROM products a inner join main_categories b on a.main_category_id = b.id Where b.category = 'for him'");
+    $result = mysqli_query($conn,"SELECT a.* FROM products a inner join main_categories b on a.main_category_id = b.id Where b.category = 'for home'");
 
-    // $rows = mysqli_num_rows($result);
+    $rows = mysqli_num_rows($result);
 
     if($rows)
 

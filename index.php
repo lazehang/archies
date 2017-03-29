@@ -190,7 +190,7 @@ $sliders = mysqli_query($conn, "SELECT * from responsiveslider");
               <div class="caption header-main" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
                 <div class="caption sub-top" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300">&mdash; <?php echo $slider['top_caption']; ?> &mdash;</div>
                 <h2><?php echo $slider['main_caption']; ?></h2>
-                <div class="caption sub-bottom" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300">&mdash;<?php echo $slider['bootom_caption']; ?>&mdash;</div>
+                <div class="caption sub-bottom" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300">&mdash;<?php echo $slider['bottom_caption']; ?>&mdash;</div>
               </div>
               <div class="caption img-toy" data-animate="slideAppearLeftToRight" data-delay="200">
                 <img src="img/slider/<?php echo $slider['src']; ?>">

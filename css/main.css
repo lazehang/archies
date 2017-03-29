@@ -1475,7 +1475,7 @@ width: 150px;
 .head-banner {
   margin-top: 5em;
   height:100%;
-  background-image: url(../images/border-bg.png), linear-gradient(to right, #009688 0%, rgba(183, 170, 51, 0.49) 100%);
+  background-image: url(../images/border-bg.png), linear-gradient(to right, #b2151d 0%, rgba(183, 170, 51, 0.49) 100%);
   box-shadow: 0px 5px 8px rgba(136, 136, 136, 0.41);
 }
 .banner-caption {

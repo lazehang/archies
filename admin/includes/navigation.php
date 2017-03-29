@@ -129,6 +129,8 @@
           </a>
           <ul class="treeview-menu" style="display: none;">
             <li><a href="slider.php"><i class="fa fa-circle-o"></i>Responsive Slider</a></li>
+             <li><a href="heroslider.php"><i class="fa fa-circle-o"></i>Hero Video Slider</a></li>
+             <li><a href="testimonial.php"><i class="fa fa-circle-o"></i>Testimonial</a></li>
           </ul>
         </li>
       </ul>

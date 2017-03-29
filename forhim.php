@@ -1,6 +1,6 @@
 <?php
  require "includes/db.php";
-// $sql = mysqli_query($conn, "SELECT a.* FROM products a inner join main_categories b on a.main_category_id = b.id Where b.category = 'for him' ");
+ $sql = mysqli_query($conn, "SELECT a.* FROM products a inner join main_categories b on a.main_category_id = b.id Where b.category = 'for him' ");
 
 ?>
 <!DOCTYPE html>
@@ -54,7 +54,7 @@
 				{
 					$perpage= $_POST['perpage'];
 				} else{
-				$perpage = 12;
+				$perpage = 2;
 				}
 				if(isset($_GET["page"])){
 				$page = intval($_GET["page"]);
@@ -93,7 +93,16 @@
 				<?php
 				}
 				}
-				?>
+				else {
+		         ?>
+		   
+		          <div class="text-center text-danger">
+		            <h1>No Results Available Now !!</h1>
+		          </div>          
+
+		        <?php
+		        }
+						?>
 			  </div>
     		</div>
 		</div>
@@ -107,9 +116,9 @@
     if(isset($page))
   {
 
-    // $result = mysqli_query($conn,"SELECT a.* FROM products a inner join main_categories b on a.main_category_id = b.id Where b.category = 'for him'");
+    $result = mysqli_query($conn,"SELECT a.* FROM products a inner join main_categories b on a.main_category_id = b.id Where b.category = 'for him'");
 
-    // $rows = mysqli_num_rows($result);
+    $rows = mysqli_num_rows($result);
 
     if($rows)
 
@@ -133,14 +142,14 @@
 
       $j = $page - 1;
 
-      echo "<li class='page-item'><a class='page-link' href='forkids.php?page=$j'>< Prev</a></li>";
+      echo "<li class='page-item'><a class='page-link' href='forhim.php?page=$j'>< Prev</a></li>";
     }
 
     for($i=1; $i <= $totalPages; $i++)
     {
       if($i<>$page)
       {     
-        echo "<li class='page-item'><a class='page-link' href='forkids.php?page=$i'>$i</a></li>";
+        echo "<li class='page-item'><a class='page-link' href='forhim.php?page=$i'>$i</a></li>";
       }
 
       else
@@ -164,7 +173,7 @@
 
       $j = $page + 1;
 
-      echo "<li class='page-item'><a class='page-link' href='forkids.php?page=$j'>Next</a></li>";
+      echo "<li class='page-item'><a class='page-link' href='forhim.php?page=$j'>Next</a></li>";
 
     }
   }

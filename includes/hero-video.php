@@ -1,9 +1,13 @@
+<?php 
+$videoslider= mysqli_query($conn, "SELECT * FROM hero_slider"); 
+
+?>
 <section class="cd-hero">
-   
-    
+     
 	    <ul class="cd-hero-slider">
 	      <div class="overlay"></div>
 
+		<?php while($video=mysqli_fetch_assoc($videoslider)) { ?>
 	    <li class="cd-bg-video selected" >
 	        <div class="cd-full-width">
 	          <h2>Archies Gift Shop</h2>
@@ -14,12 +18,13 @@
 	       
 	        </div> <!-- .cd-full-width -->
 
-	        <div class="cd-bg-video-wrapper" data-video="hero-slider/assets/video/video1">
+	        <div class="cd-bg-video-wrapper" data-video="img/videos/<?php echo $video['video'] ;?>">
 	          
 	        </div>
 	       
 	      </li>
-	     
+	  <?php }
+?>	     
 	    </ul>
 	
   	

@@ -75,25 +75,9 @@ $row = $query->fetch_assoc();
 							            	<td>Price :</td>
 							                <td><span><?php echo $row['price'] ;?></span>/unit</td>
 							            </tr>
-							            <tr>
-							           	    <td>Color :</td>
-							                <td>
-							                	<select id="colorselector">
-												    <option value="106" data-color="#A0522D">sienna</option>
-												    <option value="47" data-color="#CD5C5C" selected="selected">indianred</option>
-												    <option value="87" data-color="#FF4500">orangered</option>
-								    			</select>
-											</td>
-							            </tr>
+							          
           
-          							   	<tr>
-                							<td>Size :</td>
-							                <td>
-							                  <label class="radio-inline"><input type="radio" name="optradio">Small</label>
-							                  <label class="radio-inline"><input type="radio" name="optradio">M</label>
-							                  <label class="radio-inline"><input type="radio" name="optradio">Large</label>
-							                </td>
-              							</tr>
+          							   
 							            <tr>
 						                	<td>Quantity :</td>
 						                	<td>

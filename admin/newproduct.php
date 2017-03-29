@@ -114,19 +114,19 @@ if(isset($_POST['submit'])){
                    <input name="" type="hidden" value="">
                   <div class="form-group well">
                     <label for="name" class="col-md-3">Product Name</label>
-                    <input type="text" name="name" id="name" value="<?php if(!empty($Edit)){
+                    <input class="form-control" type="text" name="name" id="name" value="<?php if(!empty($Edit)){
                       echo $product['product_name'];
                     } ?>" placeholder="Product Name">
                   </div>
                   <div class="form-group well">
                     <label for="price" class="col-md-3">Price</label>
-                    <input type="number" name="price" id="price" value="<?php if(!empty($Edit)){
+                    <input class="form-control" type="number" name="price" id="price" value="<?php if(!empty($Edit)){
                       echo $product['price'];
                     } ?>" placeholder="1000">
                   </div>
                   <div class="form-group well">
                     <label for="stock" class="col-md-3">Stock</label>
-                    <input type="number" name="stock" id="stock" value="<?php if(!empty($Edit)){
+                    <input class="form-control" type="number" name="stock" id="stock" value="<?php if(!empty($Edit)){
                       echo $product['stock'];
                     } ?>" placeholder="1000">
                   </div>
@@ -147,7 +147,7 @@ if(isset($_POST['submit'])){
                     <?php }
                     else{
                         ?>
-                    <select name="m_category">
+                    <select class="form-control" name="m_category">
                       <?php
                       if(isset($_GET['cat'])){
                         $cat = $_GET['cat'];
@@ -210,7 +210,7 @@ if(isset($_POST['submit'])){
                     <?php }
                     else{
                         ?>
-                    <select name="category">
+                    <select class="form-control" name="category">
                          <?php
                       if(isset($_GET['fcat'])){
                         $fcat = $_GET['fcat'];
@@ -256,7 +256,7 @@ if(isset($_POST['submit'])){
 
                   <div class="form-group well">
                     <label for="image" class="col-md-3">Image</label>
-                    <input type="file" name="image" id="image" value="">
+                    <input class="form-control" type="file" name="image" id="image" value="">
         
                     
                   </div>
