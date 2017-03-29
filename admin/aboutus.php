@@ -1,5 +1,6 @@
 <?php
 require '../includes/db.php';
+$about = mysqli_query($conn, "SELECT * FROM about")->fetch_assoc();
 
 ?>
 <?php include "includes/header.php"; ?>
@@ -35,12 +36,13 @@ require '../includes/db.php';
       <table class="table table-responsive table-striped">
         <tr>
           <th>Image</th>
-          <td><img src="img/aboutus/" class="img img-responsive"></td>
+          <td><img src="../img/about/<?php echo $about['image']; ?>" class="img img-responsive"></td>
           
         </tr>
         <tr>
           <th>Content</th>
-          <td style="word-wrap:break-word; width:800px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          <td style="word-wrap:break-word; width:800px">
+            <?php echo $about['content']; ?>
           </td>
          
         </tr>
@@ -63,22 +65,22 @@ require '../includes/db.php';
       <table class="table table-responsive table-striped">
         <tr>
           <th><i class="fa fa-phone-square fa-lg"></i> &nbsp; Phone No.</th>
-          <td>977-98078999098 | 90798789</td>
+          <td><?php echo $about['phone']; ?></td>
         
         </tr>
         <tr>
           <th><i class="fa fa-fax fa-lg"></i> &nbsp; Fax</th>
-          <td>989989879878</td>
+          <td><?php echo $about['fax']; ?></td>
          
         </tr>
         <tr>
           <th><i class="fa fa-envelope fa-lg"></i> &nbsp; Mail</th>
-          <td>example@gmail.com</td>
+          <td><?php echo $about['email']; ?></td>
  
         </tr>
         <tr>
           <th><i class="fa fa-map-marker fa-lg"></i> &nbsp;  Address</th>
-          <td>Civil mall khichhapokhari</td>
+          <td><?php echo $about['address']; ?></td>
         </tr>
       </table>
     
@@ -97,22 +99,22 @@ require '../includes/db.php';
       <table class="table table-responsive table-striped">
         <tr>
           <th><i class="fa fa-facebook fa-lg"></i> &nbsp; Facebook</th>
-          <td>977-98078999098 | 90798789</td>
+          <td><?php echo $about['facebook']; ?></td>
 
         </tr>
         <tr>
           <th><i class="fa fa-instagram fa-lg"></i> &nbsp; Instagram</th>
-          <td>989989879878</td>
+          <td><?php echo $about['instagram']; ?></td>
 
         </tr>
         <tr>
           <th><i class="fa fa-twitter fa-lg"></i> &nbsp; Twitter</th>
-          <td>example@gmail.com</td>
+          <td><?php echo $about['twitter']; ?></td>
 
         </tr>
         <tr>
           <th><i class="fa fa-google-plus fa-lg"></i> &nbsp; Google+</th>
-          <td>Civil mall khichhapokhari</td>
+          <td><?php echo $about['google+']; ?></td>
 
         </tr>
       </table>

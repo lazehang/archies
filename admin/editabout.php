@@ -9,9 +9,11 @@ $Edit = isset($result) ? true : false ;
 
 if(isset($_GET['edit'])){
   $edit= $_GET['edit'];
+}else{
+  echo "Error";
 }
 
-if(isset($_POST['submit'])){
+if(isset($_POST['about'])){
     $content = $_POST['content'];
 
     $file = rand(1000,100000)."-".$_FILES['image']['name'];
@@ -23,18 +25,48 @@ if(isset($_POST['submit'])){
     $folder ="../img/about/";
     $target_file = $folder . basename($_FILES["image"]["name"]);
 
-    // $old = $about['image'];
-    // unlink($folder.$old);
-
     $Update = mysqli_query($conn, "UPDATE about SET image = '".$file."', content = '".$content."' WHERE id = '$id' "); 
     move_uploaded_file($file_loc, $folder.$file) or die(mysqli_error($conn));
+    $old = $about['image'];
+    unlink($folder.$old);
+
     if($Update){  
     header("location:aboutus.php");
     exit();
-  }else {
-    echo "Number of rows affected: " . mysql_affected_rows() . "<br>";
-}
+  }
+    
+  }elseif(isset($_POST['contact'])) {
+    
+    $phone=$_POST['phone'];
+    $fax = $_POST['fax'];
+    $email = $_POST['email'];
+    $address = $_POST['address'];
 
+    $Update = mysqli_query($conn, "UPDATE about SET phone = '".$phone."', fax = '".$fax."', email = '".$email."', address = '".$address."' WHERE id = '$id' "); 
+  
+    if($Update){  
+    header("location:aboutus.php");
+    exit();
+    }
+   
+}elseif(isset($_POST['social'])) {
+    
+    $fb = $_POST['fb'];
+    $insta = $_POST['insta'];
+    $twitter = $_POST['twitter'];
+    $google = $_POST['g+'];
+
+   $Update = mysqli_query($conn, "UPDATE about SET facebook = '".$fb."', instagram = '".$insta."', twitter = '".$twitter."', google+ = '".$google."' WHERE id = '$id' "); 
+
+    if($Update){  
+    header("location:aboutus.php");
+    exit();
+    }
+
+}elseif (isset($_POST['error'])) {
+    ?>
+    <script>alert('error');</script>
+    <?php
 }
 
 
@@ -191,11 +223,20 @@ if(isset($_POST['submit'])){
                     }?>             
 
                   <input class="btn btn-danger" type="reset" value="Clear">
-                  <input class="btn btn-success"  type="submit" value="<?php if(!empty($Edit)){
+                  <input class="btn btn-success" type="submit" name="<?php 
+                  if($edit == 'about'){
+                      echo 'about';
+                  }elseif ($edit == 'contact') {
+                    echo 'contact';
+                  }elseif ($edit == 'social') {
+                    echo 'social';
+                  }else {
+                    echo 'error';
+                  }  ?>" type="submit" value="<?php if(!empty($Edit)){
                    echo "UPDATE";
                  }else{
                   echo "SAVE";
-                 } ?>" name="submit"> <br><br>
+                 } ?>"> <br><br>
               </form>
     </div>
 </section><!-- /.content -->
