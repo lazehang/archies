@@ -133,6 +133,11 @@
              <li><a href="testimonial.php"><i class="fa fa-circle-o"></i>Testimonial</a></li>
           </ul>
         </li>
+        <li class="treeview">
+          <a href="aboutus.php">
+            <i class="fa fa-arrow-right"></i> <span>About</span>
+          </a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

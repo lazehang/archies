@@ -1,3 +1,8 @@
+<?php
+require "includes/db.php";
+$result = mysqli_query($conn, "SELECT * FROM about");
+$about = mysqli_fetch_assoc($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -33,13 +38,13 @@
 							<h2 class="section-heading">About <span> Us </span></h2>
    						</div>
    						<div class="col-md-5">
-	   								<img src="images/shop.jpg">
+	   								<img src="img/about/<?php echo $about['image']; ?>">
 	   							</div>
 
    						<!-- about us -->
    						<div class="col-md-7 paragraph">
    							<p>
-   								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+   								<?php echo $about['content']; ?>
    							</p>
 
    							
@@ -85,7 +90,7 @@
             <div class="container">
 
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
               <h2>Contact Us</h2>
               <p>Feel free to shout us by feeling the contact form or visiting our social network sites like Fackebook,Whatsapp,Twitter.</p>
               <div class="row">
@@ -109,24 +114,33 @@
                   <hr>
                     <h3>Our Social Sites</h3>
                   <ul class="list-inline banner-social-buttons">
-                    <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter"> <span class="network-name">Twitter</span></i></a></li>
-                    <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-facebook"> <span class="network-name">Facebook</span></i></a></li>
-                    <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-youtube-play"> <span class="network-name">Youtube</span></i></a></li>
+                    <li><a href="<?php echo $about['twitter']; ?>" class="btn btn-default btn-lg"><i class="fa fa-twitter"> <span class="network-name">Twitter</span></i></a></li>
+                    <li><a href="<?php echo $about['facebook']; ?>" class="btn btn-default btn-lg"><i class="fa fa-facebook"> <span class="network-name">Facebook</span></i></a></li>
+                    <li><a href="<?php echo $about['instagram']; ?>" class="btn btn-default btn-lg"><i class="fa fa-instagram"> <span class="network-name">Instagram</span></i></a></li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <div class="col-md-6">
-              <div id="googleMap" style="">
+            
 
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.579027228454!2d85.31054451465603!3d27.69940318279522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1854a0c1c183%3A0x864be1bcc05db676!2sCivil+Mall!5e0!3m2!1sen!2snp!4v1488269899019" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+      </div>
+
+
+        <div class="container" style="width:100%">
+          <div class="row">
+            
+              <div id="googleMap">
+
+              <iframe style="width:100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.579027228454!2d85.31054451465603!3d27.69940318279522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1854a0c1c183%3A0x864be1bcc05db676!2sCivil+Mall!5e0!3m2!1sen!2snp!4v1488269899019" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         
 
-            </div>
+          
           </div>
-
-            </div>
+          </div>
+          
         </div>
 
       </section>

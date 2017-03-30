@@ -36,7 +36,7 @@ $about = mysqli_query($conn, "SELECT * FROM about")->fetch_assoc();
       <table class="table table-responsive table-striped">
         <tr>
           <th>Image</th>
-          <td><img src="../img/about/<?php echo $about['image']; ?>" class="img img-responsive"></td>
+          <td><img src="../img/about/<?php echo $about['image']; ?>" style="max-height:400px" class="img img-responsive"></td>
           
         </tr>
         <tr>
@@ -114,7 +114,7 @@ $about = mysqli_query($conn, "SELECT * FROM about")->fetch_assoc();
         </tr>
         <tr>
           <th><i class="fa fa-google-plus fa-lg"></i> &nbsp; Google+</th>
-          <td><?php echo $about['google+']; ?></td>
+          <td><?php echo $about['google']; ?></td>
 
         </tr>
       </table>

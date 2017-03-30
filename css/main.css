@@ -1695,7 +1695,7 @@ line height is 20px by default so add 30px top and bottom to equal the new .navb
 #contact {
   font-size: 18px;
   border: 1px solid #eee;
-  margin: 1%;
+  
 }
 #contact .btn:hover{
   background: #fff !important;

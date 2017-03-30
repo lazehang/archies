@@ -15,7 +15,7 @@ if(isset($_GET['edit'])){
 
 if(isset($_POST['about'])){
     $content = $_POST['content'];
-
+  
     $file = rand(1000,100000)."-".$_FILES['image']['name'];
     $name = addslashes($_FILES['image']['name']);
     $file_loc = $_FILES['image']['tmp_name'];
@@ -26,11 +26,14 @@ if(isset($_POST['about'])){
     $target_file = $folder . basename($_FILES["image"]["name"]);
 
     $Update = mysqli_query($conn, "UPDATE about SET image = '".$file."', content = '".$content."' WHERE id = '$id' "); 
+    
+    if($Update){  
+     
+      if(isset($about['image'])){
     move_uploaded_file($file_loc, $folder.$file) or die(mysqli_error($conn));
     $old = $about['image'];
     unlink($folder.$old);
-
-    if($Update){  
+    }
     header("location:aboutus.php");
     exit();
   }
@@ -56,7 +59,7 @@ if(isset($_POST['about'])){
     $twitter = $_POST['twitter'];
     $google = $_POST['g+'];
 
-   $Update = mysqli_query($conn, "UPDATE about SET facebook = '".$fb."', instagram = '".$insta."', twitter = '".$twitter."', google+ = '".$google."' WHERE id = '$id' "); 
+   $Update = mysqli_query($conn, "UPDATE about SET facebook = '".$fb."', instagram = '".$insta."', twitter = '".$twitter."', google = '".$google."' WHERE id = '$id' "); 
 
     if($Update){  
     header("location:aboutus.php");
@@ -68,34 +71,6 @@ if(isset($_POST['about'])){
     <script>alert('error');</script>
     <?php
 }
-
-
-
-//     if(isset($_GET['id'])){
-//       $id = $_GET['id'];
-     
-//             $Update = mysqli_query($conn, "UPDATE testimonial SET name = '".$name."', designation = '".$desg."', content = '".$content."' WHERE id = '$id' ");   
-//             header("location:testimonial.php");
-//             exit();
-          
-    
-//     }else{
-   
-
-//     $insert = mysqli_query($conn,"INSERT INTO testimonial (name, designation, content) VALUES ( '$name', '$desg', '$content' ) ");
-    
-//     if($insert){
-
-
-//         header("location:testimonial.php");
-      
-//     }else{
-//       echo "ERR";
-//     }
-    
-//     exit();
-// }
-
 
 ?>
 
@@ -132,7 +107,7 @@ if(isset($_POST['about'])){
 
                 <div class="form-group well">
                     <label for="name" class="col-md-3">Image</label>
-                    <input class="form-control" type="file" name="image" id="name" value="<?php
+                    <input class="form-control" type="file" name="image" id="name" required value="<?php
                     if(!empty($Edit)){
                       echo $about['image'];
                     }
@@ -140,11 +115,11 @@ if(isset($_POST['about'])){
                     </div> 
                     <div class="form-group well">
                     <label for="name" class="col-md-3">Content</label>
-                    <input class="form-control" type="text" name="content" id="name" value="<?php
+                    <textarea class="form-control" name="content" id="name"><?php
                     if(!empty($Edit)){
                       echo $about['content'];
                     }
-                    ?>"> 
+                    ?> </textarea>
                     </div> 
                     <?php } elseif ($edit == 'contact') {
                     ?>
@@ -213,7 +188,7 @@ if(isset($_POST['about'])){
                     <label for="name" class="col-md-3">Google+ link</label>
                     <input class="form-control" type="text" name="g+" id="name" value="<?php
                     if(!empty($Edit)){
-                      echo $about['google+'];
+                      echo $about['google'];
                     }
                     ?>"> 
                     </div> 
