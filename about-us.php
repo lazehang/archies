@@ -114,9 +114,9 @@ $about = mysqli_fetch_assoc($result);
                   <hr>
                     <h3>Our Social Sites</h3>
                   <ul class="list-inline banner-social-buttons">
-                    <li><a href="<?php echo $about['twitter']; ?>" class="btn btn-default btn-lg"><i class="fa fa-twitter"> <span class="network-name">Twitter</span></i></a></li>
-                    <li><a href="<?php echo $about['facebook']; ?>" class="btn btn-default btn-lg"><i class="fa fa-facebook"> <span class="network-name">Facebook</span></i></a></li>
-                    <li><a href="<?php echo $about['instagram']; ?>" class="btn btn-default btn-lg"><i class="fa fa-instagram"> <span class="network-name">Instagram</span></i></a></li>
+                    <li><a target="_blank" href="<?php echo $about['twitter']; ?>" class="btn btn-default btn-lg"><i class="fa fa-twitter"> <span class="network-name">Twitter</span></i></a></li>
+                    <li><a target="_blank" href="<?php echo $about['facebook']; ?>" class="btn btn-default btn-lg"><i class="fa fa-facebook"> <span class="network-name">Facebook</span></i></a></li>
+                    <li><a target="_blank" href="<?php echo $about['instagram']; ?>" class="btn btn-default btn-lg"><i class="fa fa-instagram"> <span class="network-name">Instagram</span></i></a></li>
                   </ul>
                 </div>
               </div>

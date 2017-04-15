@@ -279,6 +279,13 @@
 	.zoomWrapper img#zoom_03{
 		max-height: 225px !important; 
 	}
+	.zoom-wrapper{
+		display: none;
+	}
+	#product-sm {
+		padding: 3%;
+		display: inline-block !important;
+	}
 
 }
 @media (max-width: 767px) {

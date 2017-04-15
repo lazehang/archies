@@ -402,6 +402,10 @@ transition: all 0.4s ease;
 
 </style>
 
+<?php
+$query = mysqli_query($conn, 'SELECT * FROM about');
+$about = $query->fetch_assoc(); 
+?>
 
 <footer id="footer">
   <div class="container" style="width:100%">
@@ -420,10 +424,10 @@ transition: all 0.4s ease;
                 <h3>Contact us</h3>
                </div>
              <!--   <h4> Kathmandu, Nepal</h4> -->
-               <p><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+977-980504000&nbsp;&nbsp;|&nbsp;&nbsp;01-444555</p>
-               <p><i class="fa fa-fax" aria-hidden="true"></i>&nbsp;&nbsp;01-444555</p>
-               <p><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;&nbsp;arc1akash@gmail.com</p>
-               <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Civil Mall, Shop no. 420</p>
+               <p><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;<?php echo $about['phone'] ?></p>
+               <p><i class="fa fa-fax" aria-hidden="true"></i>&nbsp;&nbsp;<?php echo $about['fax']; ?></p>
+               <p><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;&nbsp;</i><?php echo $about['email']; ?></p>
+               <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;</i><?php echo $about['address']; ?></p>
             </div>
           
             <div class="col-xs-12 col-md-3 col-sm-3 foot-right">
@@ -431,7 +435,7 @@ transition: all 0.4s ease;
                 <h3>Useful Links</h3>
                </div>
                <!-- <h4 class="open-days-heading"></h4> -->
-               <p><a href="">Contacts</a></p>
+               <p><a href="about-us.php">Contacts</a></p>
                <p><a href="">Buyer's Guide</a></p>
                <p><a href="">Help</a></p>
                <p><a href="">Events</a></p>
@@ -451,16 +455,16 @@ transition: all 0.4s ease;
               </div>
                 <div class="" class="footer-social-pane">
                     
-                      <a class="social-button facebook" href="#">
+                      <a target="_blank" class="social-button facebook" href="<?php echo $about['facebook'] ?>">
                         <i class="fa fa-facebook"></i>
                       </a>
-                      <a class="social-button twitter" href="#">
+                      <a target="_blank" class="social-button twitter" href="<?php echo $about['twitter'] ?>">
                         <i class="fa fa-twitter"></i>
                       </a>
-                      <a class="social-button google" href="#">
+                      <a  target="_blank" class="social-button google" href="<?php echo $about['google'] ?>">
                         <i class="fa fa-google"></i>
                       </a>
-                      <a class="social-button instagram" href="#">
+                      <a target="_blank" class="social-button instagram" href="<?php echo $about['instagram'] ?>">
                         <i class="fa fa-instagram"></i>
                       </a>
                      

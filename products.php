@@ -49,6 +49,10 @@ $row = $query->fetch_assoc();
 					            <img id="zoom_03" src="img/products/<?php echo $row['src'] ;?>" class="img-reponsive" data-zoom-image="img/products/<?php echo $row['src'] ;?>"/>
 					            
           					</div>
+
+          					<div class="col-xs-12" id="product-sm" style="display:none;">
+          						<img src="img/products/<?php echo $row['src'] ;?>" class="img">
+          					</div>
    						</div>
 
    						<!-- Product Details Container -->
@@ -58,7 +62,7 @@ $row = $query->fetch_assoc();
 					        </div>
 					        <div class="">
 
-								<form class="order-form">
+								<form class="order-form" action="#" method="post">
             						<table class="table  col-md-12 col-sm-12 col-xs-12 ">
             							<thead>
             								<tr>
@@ -101,11 +105,12 @@ $row = $query->fetch_assoc();
             						</table>
 	            					<div style="margin-left:1%">
 	             						<button class="btn btn-danger add-to-cart-btn"> Add to cart</button>
-	            						<button class="btn btn-primary add-to-cart-btn"> Check Out</button>
+	            						<button type="button" class="btn btn-primary add-to-cart-btn" data-toggle="modal" data-target="#order" > Check Out</button>
 	            					</div>
           						</form>           
 
 					        </div>
+					       
 
 							<div class="info-wrapper col-md-12 col-sm-12 col-xs-12 ">
 								
@@ -158,7 +163,94 @@ $row = $query->fetch_assoc();
    				
    			</div>
    		</section>
+		<!-- Modal -->
+  <div class="modal fade" id="order" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+		      <div class="form-group">
+			    <label for="exampleInputEmail">Full Name</label>
+			    <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Full Name">
+	
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputEmail1">Email address</label>
+			    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+			    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+			  </div>
 
+			  <div class="form-group">
+			    <label for="exampleSelect1">Product id</label>
+			    <input class="form-control" name="product" value="<?php echo $row['id'] ?>" disabled>
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleSelect1">Product</label>
+			    <input class="form-control" name="product" value="<?php echo $row['product_name'] ?>" disabled>
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleSelect1">price</label>
+			    <input class="form-control" name="product" value="<?php echo $row['price'] ?>" disabled>
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleSelect2">Quantity</label>
+			    <select multiple class="form-control" id="exampleSelect2">
+			      <option>1</option>
+			      <option>2</option>
+			      <option>3</option>
+			      <option>4</option>
+			      <option>5</option>
+			    </select>
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleTextarea">Example textarea</label>
+			    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputFile">File input</label>
+			    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+			    <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+			  </div>
+			  <fieldset class="form-group">
+			    <legend>Radio buttons</legend>
+			    <div class="form-check">
+			      <label class="form-check-label">
+			        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+			        Option one is this and that&mdash;be sure to include why it's great
+			      </label>
+			    </div>
+			    <div class="form-check">
+			    <label class="form-check-label">
+			        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+			        Option two can be something else and selecting it will deselect option one
+			      </label>
+			    </div>
+			    <div class="form-check disabled">
+			    <label class="form-check-label">
+			        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+			        Option three is disabled
+			      </label>
+			    </div>
+			  </fieldset>
+			  <div class="form-check">
+			    <label class="form-check-label">
+			      <input type="checkbox" class="form-check-input">
+			      Check me out
+			    </label>
+			  </div>
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
    		<section id="product-info-main">
    			<div class="container" style="width:100%; padding:0% 3%;">
    				<div class="row">
